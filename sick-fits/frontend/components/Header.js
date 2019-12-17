@@ -4,6 +4,17 @@ import Nav from './Nav';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
+
+Router.onRouteChangeComplete = () => {
+  console.log("triggered coplete");
+}
+Router.onRouteChangeStart = () => {
+  console.log("start coplete");
+}
+Router.onRouteChangeError = () => {
+  console.log("error coplete");
+}
+
 const Logo = styled.h1`
   font-size: 4rem;
   margin-left: 2rem;
