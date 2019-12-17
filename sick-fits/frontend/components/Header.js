@@ -1,19 +1,20 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import Nav from './Nav';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import Nav from './Nav';
 
+Router.onRouteChangeStart = () => {
+  NProgress.start();
+};
 
 Router.onRouteChangeComplete = () => {
-  console.log("triggered coplete");
-}
-Router.onRouteChangeStart = () => {
-  console.log("start coplete");
-}
+  NProgress.done();
+};
+
 Router.onRouteChangeError = () => {
-  console.log("error coplete");
-}
+  NProgress.done();
+};
 
 const Logo = styled.h1`
   font-size: 4rem;
