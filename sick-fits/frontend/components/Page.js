@@ -7,6 +7,7 @@ class Page extends Component {
             <div>
                  <Header />
                  {this.props.children}
+                 <p>juicepage</p>
             </div>
         );
     }
